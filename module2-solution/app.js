@@ -40,6 +40,7 @@ function ShoppingListCheckOffService() {
         { name: 'banana', quantity: 3 },
         { name: 'bag of ice', quantity: 2 },
         { name: 'pie', quantity: 1 },
+		{ name: 'toilet paper', quantity: 20 },
     ];
     var boughtList = [];
 
