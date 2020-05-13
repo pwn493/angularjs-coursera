@@ -6,7 +6,7 @@
         var service = this;
 
         service.getAllCategories = function () {
-            $http({ url: 'https://davids-restaurant.herokuapp.com/categories.json'})
+            return $http({ url: 'https://davids-restaurant.herokuapp.com/categories.json'})
             .then(response => {
                 console.log(response.data);
                 return response.data;
@@ -14,7 +14,7 @@
         }
 
         service.getItemsForCategory = function (categoryShortName) {
-            $http({ 
+            return $http({ 
                 url: 'https://davids-restaurant.herokuapp.com/menu_items.json',
                 params: { category: categoryShortName}
             })

@@ -8,12 +8,25 @@
   </head>
 <body ng-app="MenuApp">
     <div>Hi</div>
+    <div>
+        <a ui-sref="home">Home</a>
+        <a ui-sref="categories">Categories</a>
+    </div>
     <ui-view></ui-view>
     <script src="lib/angular.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
+
     <script src="src/menuapp.module.js"></script>
     <script src="src/data.module.js"></script>
+    
     <script src="src/routes.js"></script>
 
+    <script src="src/menudata.service.js"></script>
+
+    <script src="src/categories.controller.js"></script>
+    <script src="src/items.controller.js"></script>
+
+    <script src="src/categories.component.js"></script>
+    <script src="src/items.component.js"></script>
 </body>
 </html>

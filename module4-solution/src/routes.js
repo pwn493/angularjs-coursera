@@ -12,17 +12,19 @@
         $stateProvider
         .state('home', {
             url: '/',
-            template: '<div>Home</div>'
+            template: '<div>Welcome to our Restaurant</div>'
         })
 
         .state('categories', {
             url: '/categories',
-            template: '<div>categories</div>'
+            template: '<categories items="ctrl.items"></categories>',
+            controller: 'CategoriesController as ctrl'
         })
 
         .state('items', {
             url: '/items/{category}',
-            template: '<div>items</div>'
+            template: '<items items="ctrl.items"></items>',
+            controller: 'ItemsController as ctrl'
         });
     }
 })()
