@@ -7,10 +7,9 @@
 
   </head>
 <body ng-app="MenuApp">
-    <div>Hi</div>
-    <div>
-        <a ui-sref="home">Home</a>
-        <a ui-sref="categories">Categories</a>
+    <div class="nav">
+        <a ui-sref="home" ui-sref-active="active">Home</a>
+        <a ui-sref="categories" ui-sref-active="active">Categories</a>
     </div>
     <ui-view></ui-view>
     <script src="lib/angular.js"></script>

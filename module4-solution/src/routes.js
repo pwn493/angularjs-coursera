@@ -12,7 +12,7 @@
         $stateProvider
         .state('home', {
             url: '/',
-            template: '<div>Welcome to our Restaurant</div>'
+            template: '<h1>Welcome to our Restaurant</h1>'
         })
 
         .state('categories', {
@@ -23,7 +23,7 @@
 
         .state('items', {
             url: '/items/{category}',
-            template: '<items items="ctrl.items"></items>',
+            template: '<items items="ctrl.items" category="ctrl.category"></items>',
             controller: 'ItemsController as ctrl'
         });
     }

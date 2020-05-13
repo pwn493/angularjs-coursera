@@ -9,6 +9,7 @@
         MenuDataService.getItemsForCategory($stateParams.category).then(results => {
             console.log('items results, ', results);
             ctrl.items = results.menu_items;
+            ctrl.category = results.category;
         });
     }
 })();
