@@ -1,0 +1,39 @@
+<h1>Newsletter</h1>
+<div ng-controller="NewsletterRegistrationController as regCtrl">
+    <fieldset>
+    <form name="signUpForm" novalidate>
+        <input type="text" name="firstName" ng-model="signUpForm.user.firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" ng-model="signUpForm.user.lastName" placeholder="Last Name" required>
+        <span ng-if="!signUpForm.firstName.$error.required && !signUpForm.lastName.$error.required">
+        {{ signUpForm. user. firstName }} {{ signUpForm.user.lastName }}
+        </span>
+        <span
+            ng-if="(signUpForm.firstName.$error.required || signUpForm.lastName.$error.required) && signUpForm.firstName.$touched && signUpForm.lastName.$touched">
+            Name is required
+        </span>
+        <br>
+        <input type="email" name="email" ng-model="signUpForm.user.email" placeholder="Email" required>
+        {{ signUpForm.user.email }}
+        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+        <br>
+        <input type="text" name="phone" ng-model="signUpForm.user.phone" placeholder="Phone ###-###-####"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        {{ signUpForm.user.phone }}
+        <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+        </span>
+        <br>
+        <input type="text" name="favoriteFoodType" ng-model="signUpForm.user.food" placeholder="Favorite menu item (L3)" required>
+        <span ng-if="regCtrl.menuItemError">{{ regCtrl.menuItemError }}</span>
+        <br>
+        <button ng-click="regCtrl.submit(signUpForm.user)" ng-disabled="signUpForm.$invalid || regCtrl.submitted">Submit</button>
+    </form>
+    </fieldset>
+
+    <div ng-if="regCtrl.submitted">
+        <p>Your information has been saved!</p>
+        <p>Thank you for signing up!</p>
+    </div>
+</div>
